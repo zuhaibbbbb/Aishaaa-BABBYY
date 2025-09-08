@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aisha babbyyy ka b'day 🎂</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 40px;
+        }
+
+        /* Envelope Styling */
+        .envelope-container {
+            position: relative;
+            width: 190px;
+            height: 140px;
+            margin: 65px auto;
+            cursor: pointer;
+        }
+        .envelope {
+            width: 100%;
+            height: 100%;
+            background: #ffcccb;
+            position: absolute;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.5s ease-in-out;
+        }
+        .flap {
+            width: 100%;
+            height: 50%;
+            background: #ff9999;
+            position: absolute;
+            top: 0;
+            left: 0;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            transition: transform 0.5s ease-in-out;
+        }
+        .message {
+            position: absolute;
+            width: 90%;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease-in-out;
+        }
+        .open .flap {
+            transform: rotateX(180deg);
+        }
+        .open .message {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Cake Styling */
+        .cake-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 65px auto;
+        }
+        .cake {
+            width: 100%;
+            height: 100px;
+            background: pink;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            bottom: 0;
+        }
+        .cake-bottom {
+            width: 100%;
+            height: 80px;
+            background: white;
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            bottom: -30px;
+        }
+        .candles {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .candle {
+            width: 12px;
+            height: 65px;
+            background: purple;
+            position: relative;
+        }
+        .flame {
+            width: 9px;
+            height: 20px;
+            background: orange;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+        .blown-out {
+            display: none;
+        }
+
+        /* 🔥 Red Berries Styling */
+        .berries {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .berry {
+            width: 12px;
+            height: 12px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        /* Ring Box Styling */
+        .proposal-section {
+            margin-top: 20px;
+        }
+        .ring-box {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            position: relative;
+            cursor: pointer;
+        }
+        .box-bottom {
+            width: 100px;
+            height: 50px;
+            background: darkblue;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .box-lid {
+            width: 100px;
+            height: 50px;
+            background: darkblue;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 1s ease-in-out;
+        }
+        .ring {
+            width: 60px;
+            height: 60px;
+            border: 5px solid gold;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            transition: transform 1s ease-in-out;
+        }
+        .diamond {
+            width: 30px;
+            height: 30px;
+            background: lightblue;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%) rotate(180deg);
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday to my aishaa babyyy 🎉🎈🎊💗</h1>
+
+    <!-- Envelope Section -->
+    <div class="envelope-container" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="flap"></div>
+        </div>
+        <div class="message">
+            <p>
+                Happiest birthday aisha babbyyy ⭐️🎈🎊💗  
+                Wishing you the best b'day ever!  .  
+                zaifuuu loves your smiles 🥹💐💗.  
+                Always take care of yourself my aishaa babbyyy, stay hydrated, eat well, and sleep well.  
+ .  
+                Happiest birthday lagyo balaiii,  
+                meri aankhon ka tara, mere jigar ka tukda.  
+                I love you infinite times and beyond! 🥹💘🌷⭐️  
+            </p>
+        </div>
+    </div>
+
+    <!-- Cake Section -->
+    <div id="cakeSection">
+        <h2>Tap to Blow Candles 🎂</h2>
+        <div class="cake-container" onclick="blowCandles()">
+            <div class="cake">
+                <div class="berries">
+                    <div class="berry"></div>
+                    <div class="berry"></div>
+                    <div class="berry"></div>
+                    <div class="berry"></div>
+                    <div class="berry"></div>
+                </div>
+            </div>
+            <div class="cake-bottom"></div>
+            <div class="candles">
+                <div class="candle"><div class="flame"></div></div>
+                <div class="candle"><div class="flame"></div></div>
+                <div class="candle"><div class="flame"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proposal Section -->
+    <div id="proposal" class="hidden proposal-section">
+        <h2>Will You Marry Me aishaa babbyyy? 🥹👉🏻👈🏻💍</h2>
+        <div class="ring-box" onclick="openRingBox()">
+            <div class="box-lid"></div>
+            <div class="box-bottom"></div>
+            <div class="ring">
+                <div class="diamond"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openEnvelope() { document.querySelector(".envelope-container").classList.toggle("open"); }
+        function blowCandles() { document.querySelectorAll(".flame").forEach(flame => flame.classList.add("blown-out")); }
+        function openRingBox() { document.querySelector(".box-lid").style.transform = "translateX(-20px) rotate(-45deg)"; document.querySelector(".ring").style.transform = "translateX(-50%) scale(1)"; }
+    </script>
+
+</body>
+</html>
